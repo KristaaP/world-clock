@@ -22,8 +22,19 @@ function updateTime() {
     romeDateElement.innerHTML = romeTime.format("MMMM	Do YYYY");
     romeTimeElement.innerHTML = romeTime.format("h:mm:ss [<small>]A[</small>]");
   }
-}
+  //Melbourne
+  let melbourneElement = document.querySelector("#melbourne");
+  if (melbourneElement) {
+    let melbourneDateElement = melbourneElement.querySelector(".date");
+    let melbourneTimeElement = melbourneElement.querySelector(".time");
+    let melbourneTime = moment().tz("Europe/Melbourne");
 
+    melbourneDateElement.innerHTML = melbourneTime.format("MMMM	Do YYYY");
+    melbourneTimeElement.innerHTML = melbourneTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
+}
 function updateCity(event) {
   let cityTimeZone = event.target.value;
   if (cityTimeZone === "current") {
